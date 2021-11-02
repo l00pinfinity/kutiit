@@ -19,6 +19,6 @@ $kutiit->id = $data->id;
 
 if ($kutiit->delete()) {
   echo json_encode(array('message' => 'Proverb deleted successfully'));
-}else{
+} else {
   echo json_encode(array('message' => 'Proverb not deleted, try again'));
 }

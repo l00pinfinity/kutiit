@@ -22,6 +22,6 @@ $kutiit->tribe_id = $data->tribe_id;
 
 if ($kutiit->create()) {
   echo json_encode(array('message' => 'Proverb added successfully'));
-}else{
+} else {
   echo json_encode(array('message' => 'Proverb not added, try again'));
 }

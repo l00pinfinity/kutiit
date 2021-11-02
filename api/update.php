@@ -24,6 +24,6 @@ $kutiit->tribe_id = $data->tribe_id;
 
 if ($kutiit->update()) {
   echo json_encode(array('message' => 'Proverb updated successfully'));
-}else{
+} else {
   echo json_encode(array('message' => 'Proverb failed to update, try again'));
 }

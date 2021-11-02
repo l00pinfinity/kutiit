@@ -26,12 +26,12 @@ if ($num > 0) {
     );
 
     //Push to 'data'
-    array_push($tribe_arr['data'],$tribe_item);
+    array_push($tribe_arr['data'], $tribe_item);
   }
 
   //Turn to json
   echo json_encode($tribe_arr);
-}else{
+} else {
   echo json_encode(
     array('message' => 'No tribes added')
   );

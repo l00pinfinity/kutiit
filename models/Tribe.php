@@ -1,5 +1,6 @@
 <?php
-class Tribe{
+class Tribe
+{
   private $conn;
   private $table = 'tribes';
 
@@ -7,13 +8,15 @@ class Tribe{
   public $name;
   public $created_at;
 
-  public function __construct($db){
+  public function __construct($db)
+  {
     $this->conn = $db;
   }
 
   //get all tribes
 
-  public function read(){
+  public function read()
+  {
     $query = 'SELECT id,name,created_at FROM ' . $this->table . ' ORDER BY created_at DESC';
 
     //prepared statement

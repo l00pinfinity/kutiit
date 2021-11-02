@@ -20,20 +20,7 @@ class Proverb
   //Get proverb
   public function read()
   {
-    $query = 'SELECT
-    t.name as tribe_name,
-    p.id,
-    p.tribe_id,
-    p.proverb,
-    p.english,
-    p.meaning,
-    p.created_at 
-    FROM 
-    ' . $this->table . ' p
-    LEFT JOIN
-    tribes t ON p.tribe_id = t.id
-    ORDER BY
-    p.created_at DESC';
+    $query = 'SELECT t.name as tribe_name,p.id,p.tribe_id,p.proverb,p.english,p.meaning,p.created_at FROM ' . $this->table . ' p LEFT JOIN tribes t ON p.tribe_id = t.id ORDER BY p.created_at DESC';
 
     //prepared statement
     $stmt = $this->conn->prepare($query);
@@ -44,8 +31,7 @@ class Proverb
   //Get single proverb
   public function read_single()
   {
-    $query = 'SELECT
-    t.name as tribe_name,
+    $query = 'SELECT t.name as tribe_name,
     p.id,
     p.tribe_id,
     p.proverb,
@@ -77,7 +63,8 @@ class Proverb
   }
 
   //Create proverb that will be from Admin-Kutiit
-  public function create(){
+  public function create()
+  {
     $query = 'INSERT INTO ' . $this->table . '
     SET 
     proverb = :proverb,
@@ -107,7 +94,8 @@ class Proverb
   }
 
   //update proverb that will be from Admin-Kutiit
-  public function update(){
+  public function update()
+  {
     $query = 'UPDATE ' . $this->table . '
       SET 
       proverb = :proverb,
@@ -143,7 +131,8 @@ class Proverb
   }
 
   //delete proverb
-  public function delete(){
+  public function delete()
+  {
     $query = 'DELETE FROM ' . $this->table . ' WHERE id=:id ';
 
     $stmt = $this->conn->prepare($query);

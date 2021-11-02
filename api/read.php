@@ -29,12 +29,12 @@ if ($num > 0) {
     );
 
     //Push to 'data'
-    array_push($proverb_arr['data'],$proverb_item);
+    array_push($proverb_arr['data'], $proverb_item);
   }
 
   //Turn to json
   echo json_encode($proverb_arr);
-}else{
+} else {
   echo json_encode(
     array('message' => 'No proverbs currently')
   );
