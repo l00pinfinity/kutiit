@@ -62,7 +62,7 @@ class Proverb
     $stmt = $this->conn->prepare($query);
 
     //Bind id using name parameter
-    $stmt->bindParam(1,$this->id);
+    $stmt->bindParam(1, $this->id);
 
     $stmt->execute();
 
@@ -94,15 +94,68 @@ class Proverb
     $this->tribe_id = htmlspecialchars(strip_tags($this->tribe_id));
 
     //Bind data
-    $stmt->bindParam(':proverb',$this->proverb);
-    $stmt->bindParam(':english',$this->english);
-    $stmt->bindParam(':meaning',$this->meaning);
-    $stmt->bindParam(':tribe_id',$this->tribe_id);
+    $stmt->bindParam(':proverb', $this->proverb);
+    $stmt->bindParam(':english', $this->english);
+    $stmt->bindParam(':meaning', $this->meaning);
+    $stmt->bindParam(':tribe_id', $this->tribe_id);
 
     if ($stmt->execute()) {
       return true;
     }
-    printf("Error: %s.\n",$stmt->error);
+    printf("Error: %s.\n", $stmt->error);
+    return false;
+  }
+
+  //update proverb that will be from Admin-Kutiit
+  public function update(){
+    $query = 'UPDATE ' . $this->table . '
+      SET 
+      proverb = :proverb,
+      english = :english,
+      meaning = :meaning,
+      tribe_id = :tribe_id
+      WHERE
+      id = :id';
+
+    $stmt = $this->conn->prepare($query);
+
+    //clean data from admin
+    $this->proverb = htmlspecialchars(strip_tags($this->proverb));
+    $this->english = htmlspecialchars(strip_tags($this->english));
+    $this->meaning = htmlspecialchars(strip_tags($this->meaning));
+    $this->tribe_id = htmlspecialchars(strip_tags($this->tribe_id));
+    $this->id = htmlspecialchars(strip_tags($this->id));
+
+
+    //Bind data
+    $stmt->bindParam(':proverb', $this->proverb);
+    $stmt->bindParam(':english', $this->english);
+    $stmt->bindParam(':meaning', $this->meaning);
+    $stmt->bindParam(':tribe_id', $this->tribe_id);
+    $stmt->bindParam(':id', $this->id);
+
+
+    if ($stmt->execute()) {
+      return true;
+    }
+    printf("Error: %s.\n", $stmt->error);
+    return false;
+  }
+
+  //delete proverb
+  public function delete(){
+    $query = 'DELETE FROM ' . $this->table . ' WHERE id=:id ';
+
+    $stmt = $this->conn->prepare($query);
+
+    $this->id = htmlspecialchars(strip_tags($this->id));
+
+    $stmt->bindParam(':id', $this->id);
+
+    if ($stmt->execute()) {
+      return true;
+    }
+    printf("Error: %s.\n", $stmt->error);
     return false;
   }
 }
