@@ -1,2 +1,28 @@
-vendor/
+# Ignore node_modules directory
+node_modules/
+
+# Ignore the compiled JavaScript files
+dist/
+
+# Ignore any environment-specific files
 .env
+
+# Ignore any temporary files
+*.tmp
+
+# Ignore any log files
+*.log
+
+# Ignore the TypeScript configuration file
+tsconfig.json
+
+# Ignore any editor-specific files
+.vscode/
+.idea/
+
+# Ignore any OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore the npm debug log
+npm-debug.log*

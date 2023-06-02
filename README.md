@@ -3,9 +3,10 @@
 Kutiit('people of the mouth/ people who speak the same language') Rest API to add Kalenjin Proverbs and Wise Sayings from Kutiit Admin.
 
 ## Usage
+
 ### URL
 ```bash
-www.kutiit/api/v1.com
+kutiit.com
 ```
 
 ## Usage
