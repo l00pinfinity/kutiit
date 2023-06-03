@@ -13,9 +13,6 @@ dist/
 # Ignore any log files
 *.log
 
-# Ignore the TypeScript configuration file
-tsconfig.json
-
 # Ignore any editor-specific files
 .vscode/
 .idea/

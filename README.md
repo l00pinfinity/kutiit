@@ -1,6 +1,6 @@
 # Kutiit-Backend
 
-Kutiit('people of the mouth/ people who speak the same language') Rest API to add Kalenjin Proverbs and Wise Sayings from Kutiit Admin.
+Get Kalenjin Proverbs and Wise Sayings with Kutiit ('people of the mouth/people in the same language') Rest API
 
 ## Usage
 

@@ -1,6 +1,16 @@
 {
+  "name": "kutiit",
+  "version": "1.0.0",
+  "description": "Get Kalenjin Proverbs and Wise Sayings with Kutiit ('people of the mouth/people in the same language') Rest API",
+  "author": {
+    "name": "Collins Boit",
+    "email": "collinskipkemboi001@example.com",
+    "url": "https://l00pinfinity.netlify.app/"
+  },
   "scripts": {
-    "build": "tsc"
+    "start": "node dist/app.js",
+    "build": "tsc && cp kutiit.json dist/",
+    "dev": "nodemon src/app.ts"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
